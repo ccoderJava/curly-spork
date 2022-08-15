@@ -1,7 +1,7 @@
-package com.example.webframework;
+package cc.ccoder.serverless.curlyspork.controller;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,13 +11,16 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.HashMap;
 import java.util.Map;
 
-@SpringBootApplication
+/**
+ * @author: congcong
+ * @email: congccoder@gmail.com
+ * @date: 2022/8/15 14:30
+ */
 @RestController
-public class WebFrameworkApplication {
+public class IndexController {
 
-    public static void main(String[] args) {
-        SpringApplication.run(WebFrameworkApplication.class, args);
-    }
+    @Autowired
+    private Environment environment;
 
     @GetMapping("/")
     public ResponseEntity<String> welcome() {
@@ -52,7 +55,11 @@ public class WebFrameworkApplication {
             }
 
         });
-
         return new ResponseEntity<>(fcHeaders, HttpStatus.OK);
+    }
+
+    @GetMapping("/params")
+    public ResponseEntity<String[]> listEvn() {
+        return new ResponseEntity<>(environment.getActiveProfiles(), HttpStatus.OK);
     }
 }

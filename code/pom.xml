@@ -8,11 +8,10 @@
 		<version>2.1.8.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example</groupId>
-	<artifactId>webframework</artifactId>
+	<groupId>cc.ccoder.serverless</groupId>
+	<artifactId>curly-spork</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>webframework</name>
-	<description>Demo project for Spring Boot</description>
+	<name>curly-spork</name>
 
 	<properties>
 		<java.version>1.8</java.version>

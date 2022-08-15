@@ -1,5 +1,6 @@
-package com.example.webframework;
+package cc.ccoder.serverless.curlyspork;
 
+import cc.ccoder.serverless.curlyspork.controller.IndexController;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -10,11 +11,11 @@ import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class WebFrameworkApplicationTests {
+public class CurlySporkApplicationTests {
 
 	@Test
 	public void testWelcome() {
-		assertEquals(HttpStatus.OK, new WebFrameworkApplication().welcome().getStatusCode());
+		assertEquals(HttpStatus.OK, new IndexController().welcome().getStatusCode());
 	}
 
 }
